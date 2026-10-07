@@ -5,7 +5,7 @@ const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matc
 const links = { linkedin: 'https://www.linkedin.com/in/ryanjeremymorla/', github: 'https://github.com/rm0602', email: 'ryanjeremy.morla@gmail.com' };
 const projects = {
   pathpal: {
-    title: 'PathPal', category: 'FAMILY SAFETY / CIVIC TECHNOLOGY',
+    title: 'PathPal (AI4SG)', category: 'FAMILY SAFETY / CIVIC TECHNOLOGY',
     lead: 'Connecting family journeys with better community awareness.',
     tags: ['Google Maps API', '511 API', 'Structured extraction', 'Image recognition', 'Replit', 'Xcode', 'TypeScript', 'React.JS', 'AI CV'],
     metrics: [['2', 'Family roles: parent & child'], ['3', 'Focus areas: routes, tracking & reports'], ['Prototype', 'Family safety and civic reporting']],
@@ -17,7 +17,7 @@ const projects = {
     url: null
   },
   aqualeaf: {
-    title: 'AquaLeaf', category: 'COMPUTER VISION / ENVIRONMENTAL HEALTH',
+    title: 'AquaLeaf (AI4SG)', category: 'COMPUTER VISION / ENVIRONMENTAL HEALTH',
     lead: 'Using visual information to surface environmental risks.',
     tags: ['TensorFlow', 'OpenCV', 'Python', 'Computer vision'],
     metrics: [['2', 'Detection areas: fires & plant diseases'], ['AI4SG', 'Competition-winning project'], ['Vision', 'Image-based environmental analysis']],
@@ -110,7 +110,7 @@ if ('IntersectionObserver' in window) {
 }
 const responses = {
   experience: 'Ryan has experience at Deloitte & Touche in technology controls advisory (June–August 2026), Plug and Play in IT infrastructure and automation (February–May 2026), and PwC in digital assurance (June–August 2025). His work covers access reviews, governance, enterprise systems, and automation.',
-  deloitte: 'At Deloitte, Ryan worked as a Technology Controls Advisory Intern for TMT and AI clients. His work included OpenAI, PowerQuery, and Qiskit analysis of core pipelines, mitigating $80M+ in GDPR violations, access reviews for 5,000 users, SoD and GRC analysis, and AI agents and skills to streamline production pipelines. He is a full-time offer recipient.',
+  deloitte: 'At Deloitte, Ryan worked as a Technology Controls Advisory Intern for TMT and AI clients. His work included OpenAI, PowerQuery, and Qiskit analysis of core pipelines, access reviews for 5,000 users, SoD and GRC analysis, and AI agents and skills to streamline production pipelines. He is a full-time offer recipient.',
   pwc: 'At PwC, Ryan worked in Digital Assurance & Transparency with AI, cloud, and network clients. He executed ITGC reviews within fintech and SAP S/4HANA, analyzed 75+ Jira workflows, assessed NIST and SOC1/2 frameworks through walkthroughs and risk analysis, and examined SAP, Salesforce, and cloud interfaces in testing and production environments. He is a full-time offer recipient.',
   venture: 'At Plug and Play, Ryan worked in IT infrastructure and automation for venture capital, enterprise, and unicorn clients. He resolved 90+ weekly Jira tickets, implemented AWS security and Linux control reviews, engineered Intune policies across 800 endpoints, and automated audits for 1,000+ hardware assets. He also automated access privileges using TypeScript, REST APIs, and Google Enterprise environments, improving efficiency by 80%.',
   projects: 'The featured projects are PathPal (family safety and civic reporting), AquaLeaf (TensorFlow and OpenCV for fire and plant disease detection), and Dr. Strange (Excel, AI explanations, and quantum risk simulation). Open a project card for its case study.',
@@ -119,14 +119,16 @@ const responses = {
   strange: 'Dr. Strange combines an Excel risk dashboard, AI-assisted review explanations, and Quantum Amplitude Estimation simulations. The sliders on this website calculate an exact classical probability with synthetic inputs; they do not execute quantum code or measure live business risk.',
   skills: 'Ryan’s tools include Replit, Xcode, TypeScript, React.JS, AI computer vision, Python, SQL, Bash, PowerShell, Git, Excel, Power Query, Tableau, Alteryx, OpenAI, Gemini, quantum simulations, TensorFlow, and OpenCV. His experience also includes NetSuite, Jira, Google Enterprise, Copilot, AWS, Azure, SAP S/4HANA, Salesforce, identity and access management, IT controls, and risk frameworks.',
   sustainability: 'Ryan wants to use strategy, analytics, and technology to contribute to environmental health and positive human impact. AquaLeaf focuses on fires and plant disease detection; PathPal explores family coordination and community awareness.',
-  education: 'Ryan is a first-generation college student studying Business Administration and Management Information Systems at San José State University’s Lucas College and Graduate School of Business. His recognition includes Dean’s Scholar and a Student-Professional Award.',
-  awards: 'Ryan’s resume lists two AI4SG hackathon wins, a Student-Professional Award, and Dean’s Scholar recognition. It also lists Oracle Cloud Infrastructure Associate, PwC Digital Assurance & Transparency, and Tableau certifications. CISA is in progress, not completed.',
-  contact: 'Reach Ryan at ryanjeremy.morla@gmail.com, on LinkedIn at linkedin.com/in/ryanjeremymorla/, or on GitHub at github.com/rm0602. The portfolio includes a downloadable resume.',
+  education: 'Ryan is a first-generation college student studying Business Administration and Management Information Systems at San José State University’s Lucas College and Graduate School of Business. His recognition includes Dean’s Scholar and a Grand Master Student-Professional Award.',
+  awards: 'Ryan’s recognition includes two AI4SG hackathon wins, a Grand Master Student-Professional Award, and Dean’s Scholar recognition. His certifications include Oracle Cloud Infrastructure Associate, PwC Digital Assurance & Transparency, and Tableau certifications. CISA is in progress, not completed.',
+  volunteering: 'Ryan’s volunteer work includes clothing drives and helping fellow first-generation students. His focus is supporting his community and improving quality of life for others.',
+  contact: 'Reach Ryan at ryanjeremy.morla@gmail.com, on LinkedIn at linkedin.com/in/ryanjeremymorla/, or on GitHub at github.com/rm0602.',
   availability: 'Ryan’s current availability and preferred opportunities are not specified in this portfolio. Email ryanjeremy.morla@gmail.com to ask directly.',
   about: 'Ryan Morla is a Business and Technology Professional based in the San Francisco Bay Area. His portfolio connects strategy and analytics with AI, sustainability, and software projects.',
   ai: 'This Q&A uses prepared answers and topic matching from Ryan’s published portfolio. It does not call a live AI model, send your messages to an AI provider, or incur API fees.'
 };
 const topicPatterns = [
+  ['volunteering', /volunteer|clothing|giving back|community service/],
   ['aqualeaf', /aqua\s?leaf|plant|fire|tensorflow|opencv/], ['pathpal', /path\s?pal|orivis|family|route|civic/], ['strange', /strange|quantum|qiskit|risk dashboard|probability/],
   ['deloitte', /deloitte/], ['pwc', /pwc|pricewaterhouse/], ['venture', /plug|venture|\bvc\b/], ['availability', /available|availability|hiring|opportunit|salary/],
   ['contact', /contact|email|linkedin|github|resume|reach/], ['education', /education|school|university|degree|college|sjsu|first.gen/], ['awards', /award|certif|hackathon|ai4sg|cisa|scholar/],
