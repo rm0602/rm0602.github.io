@@ -1,7 +1,7 @@
 # rm0602.github.io
 # Ryan Morla's Professional Portfolio
 
-Please visit [https://www.rm0602.github.io](https://www.rm0602.github.io) to view my most RECENT experiences and projects.
+Please visit [https://www.rm0602.github.io](https://www.rm0602.github.io) to view my most RECENT resume, experiences and projects.
 
 Not everything within this repository has been updated because I use 2 laptops and 1 desktop pc to manage my work. Some experiences and projects may also be private or unavailable for public viewing, so they should not be referenced or pressed within my email. I am open to interviews and discussions for further information.
 
