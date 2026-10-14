@@ -1,0 +1,41 @@
+{
+  "release": "2026-10-14-9bae80d1e763",
+  "runtime": "standalone-inline-css-js",
+  "files": [
+    {
+      "path": ".nojekyll",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "DEPLOY-GITHUB-PAGES.txt",
+      "bytes": 1534,
+      "sha256": "7eadc6653ccb8077d1d50125a9196f00d3754faed3a7a5eccf0eab35c71768aa"
+    },
+    {
+      "path": "assets/Ryan-Morla-Resume-2026-10-13.pdf",
+      "bytes": 168650,
+      "sha256": "e5b13152e4a409ef95438ca191105eb30cd0401cdeca5cf13a8b5bcb8e8689ee"
+    },
+    {
+      "path": "assets/favicon.svg",
+      "bytes": 227,
+      "sha256": "98ff00a26f014ad6092a018b2c6e3c7d8203c36a1ccff625a8effb59c656e054"
+    },
+    {
+      "path": "assets/ryan-morla-portrait.png",
+      "bytes": 162897,
+      "sha256": "166a43e0eac8260849775ea2d6a7ba9758c83dd8327792fc5a62aaf362d1c42a"
+    },
+    {
+      "path": "assets/sjsu-grand-master-transparent.png",
+      "bytes": 1570613,
+      "sha256": "d3cea240ff6fad4aa1944c5c4ce5268dc10469e1eea1546f10ca34716b2f1732"
+    },
+    {
+      "path": "index.html",
+      "bytes": 99735,
+      "sha256": "ba0c189564386eef3612671eba541f47ba8d3fba65fc39891258352ee7c769aa"
+    }
+  ]
+}
