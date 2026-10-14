@@ -109,7 +109,8 @@ if ('IntersectionObserver' in window) {
   $$('[data-count]').forEach(element => observer.observe(element));
 }
 const responses = {
-  experience: 'Ryan has experience at Deloitte & Touche in technology controls advisory (June–August 2026), Plug and Play in IT infrastructure and automation (February–May 2026), and PwC in digital assurance (June–August 2025). His work covers access reviews, governance, enterprise systems, and automation.',
+  honors: "Although I qualify for automatic enrollment in PRO mentorship, I haven\u2019t joined PRO or Honors. I focus on global communities like the Microsoft Ambassador Program and AI OpenCV Program, personal projects, and quietly connecting with professionals. I also run free mentorship for first-generation students on resumes and career alignment, keeping my advice within the limits of my own experience.",
+  experience: 'Ryan has experience at Deloitte & Touche in technology controls advisory (June–August 2026), Plug and Play in IT infrastructure and automation (February–May 2026), and PwC in digital assurance (June–August 2025). Ryan highlights a few roles where he’s proud of the difference he made. They’re a snapshot of his experience. His work covers tech consulting, tech assurance, business analysis, startups, and automation.',
   deloitte: 'At Deloitte, Ryan worked as a Technology Controls Advisory Intern for TMT and AI clients. His work included OpenAI and PowerQuery to streamline data from ERP and compliance pipelines, access reviews for 5,000 users, SoD and GRC analysis, and AI agents and skills to streamline production pipelines. He is a full-time offer recipient.',
   pwc: 'At PwC, Ryan worked in Digital Assurance & Transparency with AI, cloud, and network clients. He executed ITGC reviews within fintech and SAP S/4HANA, analyzed 75+ Jira workflows, assessed NIST and SOC1/2 frameworks through walkthroughs and risk analysis, and examined SAP, Salesforce, and cloud interfaces in testing and production environments. He is a full-time offer recipient.',
   venture: 'At Plug and Play, Ryan worked in IT infrastructure and automation for venture capital, enterprise, and unicorn clients. He resolved 90+ weekly Jira tickets, implemented AWS security and Linux control reviews, engineered Intune policies across 800 endpoints, and automated audits for 1,000+ hardware assets. He also automated access privileges using TypeScript, REST APIs, and Google Enterprise environments, improving efficiency by 80%.',
@@ -117,17 +118,18 @@ const responses = {
   aqualeaf: 'AquaLeaf is a computer vision project for detecting fires and selected plant diseases using TensorFlow and OpenCV. Its tools also include Xcode, MATLAB, Excel, and Node.js. AquaLeaf won AI4SG in Spring 2025 through its sustainability focus. The demo is at github.com/rm0602/AquaLeaf-demo. Published accuracy or field-deployment results are not supplied here.',
   pathpal: 'PathPal is a family safety and civic reporting prototype and AI4SG Fall 2026 winner. It connects parent approval of child accounts, journey and checkpoint tracking, route information, and AI-assisted report organization. A live project link has not yet been provided.',
   strange: 'Dr. Strange began as a professional risk dashboard and became a personal learning project. Ryan uses AI to review calculated data scores and explain them in plain language. He also added quantum Monte Carlo simulation experiments using Quantum Amplitude Estimation. The sliders on this website calculate an exact classical probability with synthetic inputs; they do not execute quantum code or measure live business risk.',
-  skills: 'Ryan’s tools include Replit, Xcode, TypeScript, React.JS, AI computer vision, Python, SQL, Bash, PowerShell, Git, Excel, Power Query, Tableau, Alteryx, OpenAI, Gemini, quantum simulations, Monte Carlo Simulation concepts, TensorFlow, and OpenCV. His experience also includes NetSuite, Jira, Google Enterprise, Copilot, AWS, Azure, SAP S/4HANA, Salesforce, identity and access management, IT controls, and risk frameworks.',
+  skills: 'Ryan’s tools include Replit, Xcode, TypeScript, React.JS, AI computer vision, Python, SQL, Bash, PowerShell, Git, Excel, Power Query, Power BI, Tableau, Alteryx, OpenAI, Gemini, quantum simulations, Monte Carlo Simulation concepts, TensorFlow, and OpenCV. His experience also includes NetSuite, Jira, Google Enterprise, Copilot, AWS, Azure, SAP S/4HANA, Salesforce, identity and access management, IT controls, ISO 27001, SDLC, QA, Tech Compliance, and risk frameworks.',
   sustainability: 'Ryan wants to use strategy, analytics, and technology to contribute to environmental health and positive human impact. AquaLeaf focuses on fires and plant disease detection; PathPal explores family coordination and community awareness.',
-  education: 'Ryan is a first-generation college student studying Business Administration and Management Information Systems at San José State University’s Lucas College and Graduate School of Business. His recognition includes Dean’s Scholar and a Grand Master Student-Professional Award.',
+  education: 'Ryan is a first-generation college student studying Business Administration and Management Information Systems at San José State University’s Lucas College and Graduate School of Business. His recognition includes Dean’s Scholar and a Grand Master Student-Professional Award, ranking #7 out of 2,600+ business students at SJSU (top 0.27%).',
   awards: 'Ryan’s recognition includes two AI4SG hackathon wins, a Grand Master Student-Professional Award, and Dean’s Scholar recognition. His certifications include Oracle Cloud Infrastructure Associate, PwC Digital Assurance & Transparency, and Tableau certifications. CISA is in progress, not completed.',
-  volunteering: 'Ryan’s volunteer work includes clothing drives and helping fellow first-generation students. His focus is supporting his community and improving quality of life for others.',
+  volunteering: 'Ryan’s volunteer work includes clothing drives and a free mentorship program for fellow first-generation students focused on resumes and career alignment. He keeps his advice within the limits of his own experience and focuses on supporting his community and improving quality of life for others.',
   contact: 'Reach Ryan at ryanjeremy.morla@gmail.com, on LinkedIn at linkedin.com/in/ryanjeremymorla/, or on GitHub at github.com/rm0602. View or download Ryan’s 10/13/26 resume using the link beside LinkedIn and GitHub at the top of the portfolio.',
   availability: 'Ryan’s current availability and preferred opportunities are not specified in this portfolio. Email ryanjeremy.morla@gmail.com to ask directly.',
   about: 'Ryan Morla is a Business and Technology Professional based in the San Francisco Bay Area. His portfolio connects strategy and analytics with AI, sustainability, and software projects.',
   ai: 'This Q&A uses prepared answers and topic matching from Ryan’s published portfolio. It does not call a live AI model, send your messages to an AI provider, or incur API fees.'
 };
 const topicPatterns = [
+  ['honors', /honors|honours|\bpro\b|top 10|mentorship program/],
   ['volunteering', /volunteer|clothing|giving back|community service/],
   ['aqualeaf', /aqua\s?leaf|plant|fire|tensorflow|opencv/], ['pathpal', /path\s?pal|orivis|family|route|civic/], ['strange', /strange|quantum|qiskit|risk dashboard|probability/],
   ['deloitte', /deloitte/], ['pwc', /pwc|pricewaterhouse/], ['venture', /plug|venture|\bvc\b/], ['availability', /available|availability|hiring|opportunit|salary/],
@@ -161,15 +163,17 @@ $('#year').textContent = String(new Date().getFullYear());
 
 // Dated resume viewer: leave the link usable when the dialog API is unavailable.
 const resumeDialog = $('#resume-dialog'), resumeLink = $('#resume-link');
-resumeLink.addEventListener('click', event => {
+let resumeReturnLink = resumeLink;
+$$('.resume-trigger').forEach(trigger => trigger.addEventListener('click', event => {
   if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || typeof resumeDialog.showModal !== 'function') return;
   event.preventDefault();
+  resumeReturnLink = trigger;
   const preview = $('#resume-preview');
   if (!preview.getAttribute('src')) preview.setAttribute('src', preview.dataset.src);
   resumeDialog.showModal();
   document.body.classList.add('modal-open');
   $('#resume-close').focus();
-});
+}));
 $('#resume-close').addEventListener('click', () => resumeDialog.close());
 resumeDialog.addEventListener('click', event => {
   if (event.target !== resumeDialog) return;
@@ -178,5 +182,5 @@ resumeDialog.addEventListener('click', event => {
 });
 resumeDialog.addEventListener('close', () => {
   document.body.classList.remove('modal-open');
-  resumeLink.focus();
+  resumeReturnLink.focus();
 });
