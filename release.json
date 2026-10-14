@@ -1,5 +1,5 @@
 {
-  "release": "2026-10-14-295e16f8ecde",
+  "release": "2026-10-14-855e75df93e4",
   "runtime": "standalone-inline-css-js",
   "files": [
     {
@@ -35,7 +35,7 @@
     {
       "path": "index.html",
       "bytes": 100996,
-      "sha256": "e7dc5a15da0824662022d196cf3453c84b7a23239d8da0b7f2b240f3f07303d0"
+      "sha256": "cd89130748101e4ec54dcfa0a8679936e74efd1f030fdba020ae4c51b4dcd3a3"
     }
   ]
 }
