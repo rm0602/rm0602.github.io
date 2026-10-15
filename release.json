@@ -1,5 +1,5 @@
 {
-  "release": "2026-10-14-855e75df93e4",
+  "release": "2026-10-14-9b6f6ba1bdd9",
   "runtime": "standalone-inline-css-js",
   "files": [
     {
@@ -23,6 +23,11 @@
       "sha256": "98ff00a26f014ad6092a018b2c6e3c7d8203c36a1ccff625a8effb59c656e054"
     },
     {
+      "path": "assets/grand-master-certification.png",
+      "bytes": 1519811,
+      "sha256": "9d970f0e62cb5e07fa5bca916e19edaa400dcff609e5958b40264b0db82b904f"
+    },
+    {
       "path": "assets/ryan-morla-portrait.png",
       "bytes": 162897,
       "sha256": "166a43e0eac8260849775ea2d6a7ba9758c83dd8327792fc5a62aaf362d1c42a"
@@ -34,8 +39,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 100996,
-      "sha256": "cd89130748101e4ec54dcfa0a8679936e74efd1f030fdba020ae4c51b4dcd3a3"
+      "bytes": 104775,
+      "sha256": "e5ccc89996cb168171708982d7ca9c576aa07027414a8ffa3367d001cabb4b8e"
     }
   ]
 }
